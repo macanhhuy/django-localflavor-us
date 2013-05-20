@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
-from django.contrib.localflavor.us.forms import (USZipCodeField,
+from django_localflavor_us.forms import (USZipCodeField,
     USPhoneNumberField, USStateField, USStateSelect,
     USSocialSecurityNumberField)
 from django.test import SimpleTestCase

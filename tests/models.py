@@ -1,4 +1,4 @@
-from django.contrib.localflavor.us.models import USStateField, USPostalCodeField
+from django_localflavor_us.models import USStateField, USPostalCodeField
 from django.db import models
 
 # When creating models you need to remember to add a app_label as
