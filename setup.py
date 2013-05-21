@@ -25,5 +25,7 @@ setup(
     ],
     install_requires=[
         'Django>=1.4',
-    ]
+    ],
+    tests_require=['Django >= 1.4.2'],
+    test_suite='runtests.main',
 )
