@@ -5,7 +5,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
     name='django-localflavor-us',
-    version='1.1',
+    version='1.1.post1',
     description='Country-specific Django helpers for U.S.A.',
     long_description=README,
     author='Django Software Foundation',
