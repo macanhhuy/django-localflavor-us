@@ -3,6 +3,7 @@ from django.db.models.fields import CharField
 from django_localflavor_us.us_states import STATE_CHOICES
 from django_localflavor_us.us_states import USPS_CHOICES
 
+
 class USStateField(CharField):
 
     description = _("U.S. state (two uppercase letters)")
@@ -12,6 +13,7 @@ class USStateField(CharField):
         kwargs['max_length'] = 2
         super(USStateField, self).__init__(*args, **kwargs)
 
+
 class USPostalCodeField(CharField):
 
     description = _("U.S. postal code (two uppercase letters)")
@@ -20,6 +22,7 @@ class USPostalCodeField(CharField):
         kwargs['choices'] = USPS_CHOICES
         kwargs['max_length'] = 2
         super(USPostalCodeField, self).__init__(*args, **kwargs)
+
 
 class PhoneNumberField(CharField):
 
@@ -34,6 +37,7 @@ class PhoneNumberField(CharField):
         defaults = {'form_class': USPhoneNumberField}
         defaults.update(kwargs)
         return super(PhoneNumberField, self).formfield(**defaults)
+
 
 # Add South introspection rules
 try:

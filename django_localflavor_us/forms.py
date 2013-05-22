@@ -16,6 +16,7 @@ from django.utils.translation import ugettext_lazy as _
 phone_digits_re = re.compile(r'^(?:1-?)?(\d{3})[-\.]?(\d{3})[-\.]?(\d{4})$')
 ssn_re = re.compile(r"^(?P<area>\d{3})[-\ ]?(?P<group>\d{2})[-\ ]?(?P<serial>\d{4})$")
 
+
 class USZipCodeField(RegexField):
     default_error_messages = {
         'invalid': _('Enter a zip code in the format XXXXX or XXXXX-XXXX.'),
@@ -24,6 +25,7 @@ class USZipCodeField(RegexField):
     def __init__(self, max_length=None, min_length=None, *args, **kwargs):
         super(USZipCodeField, self).__init__(r'^\d{5}(?:-\d{4})?$',
             max_length, min_length, *args, **kwargs)
+
 
 class USPhoneNumberField(CharField):
     default_error_messages = {
@@ -39,6 +41,7 @@ class USPhoneNumberField(CharField):
         if m:
             return '%s-%s-%s' % (m.group(1), m.group(2), m.group(3))
         raise ValidationError(self.error_messages['invalid'])
+
 
 class USSocialSecurityNumberField(Field):
     """
@@ -82,6 +85,7 @@ class USSocialSecurityNumberField(Field):
             raise ValidationError(self.error_messages['invalid'])
         return '%s-%s-%s' % (area, group, serial)
 
+
 class USStateField(Field):
     """
     A form field that validates its input is a U.S. state name or abbreviation.
@@ -108,6 +112,7 @@ class USStateField(Field):
                 pass
         raise ValidationError(self.error_messages['invalid'])
 
+
 class USStateSelect(Select):
     """
     A Select widget that uses a list of U.S. states/territories as its choices.
@@ -115,6 +120,7 @@ class USStateSelect(Select):
     def __init__(self, attrs=None):
         from .us_states import STATE_CHOICES
         super(USStateSelect, self).__init__(attrs, choices=STATE_CHOICES)
+
 
 class USPSSelect(Select):
     """
