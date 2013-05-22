@@ -1,8 +1,11 @@
 Changes
 =======
 
-1.1
----
+tip (unreleased)
+----------------
+
+1.1 (2013-05-22)
+----------------
 
 * Added South introspection rules
 * Fixed tests (no more django.contrib.localflavor)
